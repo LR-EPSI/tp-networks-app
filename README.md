@@ -78,6 +78,8 @@ Afin de s'en assurer nous pouvons effectuer la commande suivante : curl -v telne
 
 ![alt text](image-8.png)
 
+- Pour tester la résilience du réseau interne et du proxy, j'ai utilisé une méthode trouvée sur [cet article de référence en sécurité Docker](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+
 - L'application elle, est joignable via le proxy en tapant localhost:8080, qui est bien le port qui lui est attitré dans compose.yml.
 Dans nginx.conf, le proxy écoute sur le port 80 et redirige vers le service app sur le port 5000.
 
