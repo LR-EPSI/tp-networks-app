@@ -1,4 +1,4 @@
-📌 tp-networks
+📌 TP-NETWORKS
 
 📝 1. Présentation du projet
 
@@ -55,29 +55,35 @@ le réseau backend_net est de type bridge et internal: true pour isoler les serv
 ******************************************************************************************************************************
 Déploiement :
 - Une fois dans à la racine du projet après un cd tp-networks, on peut utiliser cette commande : docker compose up --build -d
+- 
 ![alt text](image-6.png)
+
 Le projet a été Built, et les containers Started.
 
-Lorsque l'on se rend sur localhost:8080, nous avons bien accès à app.py qui nous renvoie "Hello from app!"
+- Lorsque l'on se rend sur localhost:8080, nous avons bien accès à app.py qui nous renvoie "Hello from app!"
+
 ![alt text](image-7.png)
 
 
 🔐 4. Base de données inaccessible depuis l'hôte et application joignable via le proxy
 
-La base de données est bien inaccessible depuis l'hôte car son port 3306 n'est pas exposé et le réseau backend est interne dans compose.yml.
+- La base de données est bien inaccessible depuis l'hôte car son port 3306 n'est pas exposé et le réseau backend est interne dans compose.yml.
 Afin de s'en assurer nous pouvons effectuer la commande suivante : curl -v telnet://127.0.0.1:3306
+
 ![alt text](<db inaccessible telnet curl.PNG>)
-Ici la connexion nous est refusée. Or, si l'on exposait le port 3306 de mariadb et qu'on supprimait la ligne "internal: true" de networks dans compose.yml, l'accès à la base de données serait disponible depuis l'hôte, comment nous pouvons le voir ci-dessous.
+
+- Ici la connexion nous est refusée. Or, si l'on exposait le port 3306 de mariadb et qu'on supprimait la ligne "internal: true" de networks dans compose.yml, l'accès à la base de données serait disponible depuis l'hôte, comment nous pouvons le voir ci-dessous.
+
 ![alt text](image-8.png)
 
-L'application elle, est joignable via le proxy en tapant localhost:8080, qui est bien le port qui lui est attitré dans compose.yml.
+- L'application elle, est joignable via le proxy en tapant localhost:8080, qui est bien le port qui lui est attitré dans compose.yml.
 Dans nginx.conf, le proxy écoute sur le port 80 et redirige vers le service app sur le port 5000.
 
 
 ☁️ 5. Image disponible sur Docker Hub
 
-Le lien de l'image sur DockerHub : https://hub.docker.com/r/dockeruserhp/tp-networks-app
+- Le lien de l'image sur DockerHub : https://hub.docker.com/r/dockeruserhp/tp-networks-app
 
-Comment la récupérer via le terminal :
+- Comment la récupérer via le terminal :
 
 docker pull dockeruserhp/tp-networks-app:latest
