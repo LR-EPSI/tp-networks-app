@@ -49,16 +49,18 @@ Le proxy est connecté aux deux réseaux : frontend_net et backend_net.
 
 ![alt text](image-5.png)
 
-Pour ce qui est de la partie réseau, le réseau frontend_net est de type bridge pour la communication avec l’hôte, tandis que
+- Pour ce qui est de la partie réseau, le réseau frontend_net est de type bridge pour la communication avec l’hôte, tandis que
 le réseau backend_net est de type bridge et internal: true pour isoler les services internes.
 
 ******************************************************************************************************************************
-Déploiement :
-- Une fois dans à la racine du projet après un cd tp-networks, on peut utiliser cette commande : docker compose up --build -d
-- 
+- Déploiement :
+  
+- Une fois dans à la racine du projet après un cd tp-networks, on peut utiliser cette commande :
+  docker compose up --build -d
+  
 ![alt text](image-6.png)
 
-Le projet a été Built, et les containers Started.
+- Le projet a été Built, et les containers Started.
 
 - Lorsque l'on se rend sur localhost:8080, nous avons bien accès à app.py qui nous renvoie "Hello from app!"
 
@@ -86,4 +88,4 @@ Dans nginx.conf, le proxy écoute sur le port 80 et redirige vers le service app
 
 - Comment la récupérer via le terminal :
 
-docker pull dockeruserhp/tp-networks-app:latest
+  docker pull dockeruserhp/tp-networks-app:latest
