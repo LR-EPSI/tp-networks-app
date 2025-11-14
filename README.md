@@ -74,7 +74,7 @@ Afin de s'en assurer nous pouvons effectuer la commande suivante : curl -v telne
 
 ![alt text](<db inaccessible telnet curl.PNG>)
 
-- Ici la connexion nous est refusée. Or, si l'on exposait le port 3306 de mariadb et qu'on supprimait la ligne "internal: true" de networks dans compose.yml, l'accès à la base de données serait disponible depuis l'hôte, comment nous pouvons le voir ci-dessous.
+- Ici la connexion nous est refusée. Or, si l'on exposait le port 3306 de mariadb et qu'on supprimait la ligne "internal: true" de networks dans compose.yml, l'accès à la base de données serait disponible depuis l'hôte, comme nous pouvons le voir ci-dessous.
 
 ![alt text](image-8.png)
 
